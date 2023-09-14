@@ -97,11 +97,10 @@ export const DELETE = async (request) => {
   const findIndexofmesid = DB.messages.findIndex(
     (x) => x.messageId === messageId
   );
+  DB.messages.splice(findIndexofmesid, 1);
 
   writeDB();
 
-  DB.messages.splice(findIndexofmesid, 1);
-  
   return NextResponse.json({
     ok: true,
     message: "Message has been deleted",
