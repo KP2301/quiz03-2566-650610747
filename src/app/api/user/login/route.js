@@ -19,7 +19,7 @@ export const POST = async (request) => {
       { status: 400 }
     );
 
-  // const token = "Replace this with token creation";
+
   const token = jwt.sign(
     { username, role: user.role, password: user.password },
     process.env.JWT_SECRET,
